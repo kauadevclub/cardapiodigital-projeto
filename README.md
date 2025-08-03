@@ -2,6 +2,11 @@
 
 Este projeto é uma **página de cardápio digital responsiva**, ideal para restaurantes, lanchonetes, pizzarias, hamburguerias e outros estabelecimentos do ramo alimentício. O layout é moderno, atrativo e totalmente adaptável a dispositivos móveis.
 
+## 🔗 Acesse o Cardápio
+
+👉 [https://kauadevclub.github.io/cardapiodigital-projeto/)  
+*(Substitua pelo link do seu projeto publicado no GitHub Pages ou outro domínio)*
+
 ## 📋 Funcionalidades
 
 - Design moderno e responsivo
@@ -23,4 +28,6 @@ O layout foi projetado para proporcionar uma ótima experiência ao usuário, co
 ## 📱 Responsividade
 
 A página se adapta perfeitamente a diferentes tamanhos de tela, garantindo uma boa navegação tanto em dispositivos móveis quanto em desktops.
+
+
 
