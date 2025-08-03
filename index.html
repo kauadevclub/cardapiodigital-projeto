@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Bella Napoli - Cardápio Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: #ef4444;
+            color: white;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Hero Section -->
+    <header class="hero min-h-[60vh] flex flex-col justify-center items-center text-white text-center p-6">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-bounce">Pizzaria Bella Napoli</h2>
+        <p class="text-xl md:text-2xl mb-8">Sabores autênticos da Itália</p>
+        <a href="#menu" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+            Ver Cardápio
+        </a>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu" class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nosso Cardápio</h2>
+        
+        <!-- Categories -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="category-btn active bg-white text-red-500 border border-red-500 font-medium py-2 px-6 rounded-full" data-category="all">
+                Todos
+            </button>
+            <button class="category-btn bg-white text-red-500 border border-red-500 font-medium py-2 px-6 rounded-full" data-category="pizzas">
+                Pizzas
+            </button>
+            <button class="category-btn bg-white text-red-500 border border-red-500 font-medium py-2 px-6 rounded-full" data-category="massas">
+                Massas
+            </button>
+            <button class="category-btn bg-white text-red-500 border border-red-500 font-medium py-2 px-6 rounded-full" data-category="bebidas">
+                Bebidas
+            </button>
+            <button class="category-btn bg-white text-red-500 border border-red-500 font-medium py-2 px-6 rounded-full" data-category="sobremesas">
+                Sobremesas
+            </button>
+        </div>
+        
+        <!-- Menu Items -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Pizza 1 -->
+            <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md fade-in" data-category="pizzas">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80" alt="Pizza Margherita" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Pizza Margherita</h3>
+                        <span class="text-red-500 font-bold text-lg">R$ 45,90</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Molho de tomate, mussarela fresca, manjericão e azeite de oliva extra virgem.</p>
+                    <button class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full w-full transition duration-300 flex items-center justify-center gap-2" data-item="Pizza Margherita">
+                        <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Pizza 2 -->
+            <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md fade-in" data-category="pizzas">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pizza Pepperoni" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Pizza Pepperoni</h3>
+                        <span class="text-red-500 font-bold text-lg">R$ 49,90</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Molho de tomate, mussarela, pepperoni em fatias e orégano.</p>
+                    <button class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full w-full transition duration-300 flex items-center justify-center gap-2" data-item="Pizza Pepperoni">
+                        <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Massa 1 -->
+            <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md fade-in" data-category="massas">
+                <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Spaghetti Carbonara" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Spaghetti Carbonara</h3>
+                        <span class="text-red-500 font-bold text-lg">R$ 39,90</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Spaghetti com molho cremoso de ovos, queijo parmesão, bacon e pimenta do reino.</p>
+                    <button class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full w-full transition duration-300 flex items-center justify-center gap-2" data-item="Spaghetti Carbonara">
+                        <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Bebida 1 -->
+            <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md fade-in" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1558645836-e44122a743df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Refrigerante" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Refrigerante 350ml</h3>
+                        <span class="text-red-500 font-bold text-lg">R$ 8,90</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Coca-Cola, Guaraná, Fanta ou Sprite. Escolha o sabor.</p>
+                    <button class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full w-full transition duration-300 flex items-center justify-center gap-2" data-item="Refrigerante 350ml">
+                        <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Sobremesa 1 -->
+            <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md fade-in" data-category="sobremesas">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Tiramisu" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Tiramisu</h3>
+                        <span class="text-red-500 font-bold text-lg">R$ 22,90</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Sobremesa italiana clássica com camadas de biscoito champanhe, café, mascarpone e cacau.</p>
+                    <button class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full w-full transition duration-300 flex items-center justify-center gap-2" data-item="Tiramisu">
+                        <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Massa 2 -->
+            <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md fade-in" data-category="massas">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lasagna" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Lasagna à Bolonhesa</h3>
+                        <span class="text-red-500 font-bold text-lg">R$ 42,90</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Camadas de massa, molho bolonhesa, queijo mussarela e parmesão gratinado.</p>
+                    <button class="whatsapp-btn bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full w-full transition duration-300 flex items-center justify-center gap-2" data-item="Lasagna à Bolonhesa">
+                        <i class="fab fa-whatsapp"></i> Pedir pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pizzaria Bella Napoli</h3>
+                    <p class="mb-4">Sabores autênticos da Itália em um ambiente acolhedor e familiar.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-red-400 transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-red-400 transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-red-400 transition duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contato</h3>
+                    <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i> (11) 1234-5678</p>
+                    <p class="mb-2"><i class="fas fa-envelope mr-2"></i> contato@bellanapoli.com.br</p>
+                    <p><i class="fab fa-whatsapp mr-2"></i> (11) 98765-4321</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Localização</h3>
+                    <p class="mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Rua Italia, 123 - Centro, São Paulo - SP</p>
+                    <p><i class="fas fa-clock mr-2"></i> Aberto de terça a domingo, das 18h às 23h</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Pizzaria Bella Napoli. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/5511987654321?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg pulse">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Category Filter
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const category = button.dataset.category;
+                const menuItems = document.querySelectorAll('.menu-item');
+                
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                        item.classList.add('fade-in');
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // WhatsApp Order Buttons
+        document.querySelectorAll('.whatsapp-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemName = button.dataset.item;
+                const message = `Olá, gostaria de pedir: ${itemName}.`;
+                const whatsappUrl = `https://wa.me/5511987654321?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+        
+        // Scroll animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.menu-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
